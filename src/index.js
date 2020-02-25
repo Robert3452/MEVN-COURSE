@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
 const morgan = require('morgan');
-
+mongoose.set('useFindAndModify', false);
 mongoose.connect("mongodb://localhost/mevn-database", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(db => console.log('DB is connected'))
     .catch(err => console.error(err));
